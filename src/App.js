@@ -2,6 +2,7 @@ import { Button, Card, Col, Form, Row } from 'react-bootstrap';
 import { useState } from 'react';
 import { Table } from 'react-bootstrap';
 import './App.css';
+import {Link} from 'react-router-dom'
 
 function App() {
 	const [queryParams, setQueryParams] = useState({
@@ -112,7 +113,9 @@ function App() {
 							<tr key={index}>
 								{Array.from(rowNames).map((rowName, index) => (
 									<td key={index}>
-										{rowName.search('Date') > -1
+										{rowName.search('id')!==-1? 
+										<Link to={`/anunt/${JSON.stringify(row[index])}`}>{row[index]}</Link>
+										: rowName.search('Date') > -1
 											? new Date(Date.parse(row[index])).toLocaleString()
 											: JSON.stringify(row[index])}
 									</td>
