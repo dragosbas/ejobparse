@@ -6,7 +6,7 @@ import './App.css';
 function App() {
 	const [queryParams, setQueryParams] = useState({
 		page: 1,
-		pageSize: 10,
+		pageSize: 100,
 		q: '',
 		sort: 'date',
 	});
