@@ -1,5 +1,5 @@
 import { Button, Card, Col, Form, Row } from 'react-bootstrap';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import './App.css';
 import {Link} from 'react-router-dom'
@@ -22,7 +22,7 @@ function App() {
 			.then((response) => setResp(response.jobs))
 			.catch((e) => console.log(0, e));
 	}
-
+	useEffect(()=>fetchData(queryParams),[])
 	var rowNames = new Set();
 
 	resp &&
